@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { fbLogin } from "../config/firebasemethods";
-import Input from "../components/inputfield";
+import InputField from "../components/inputfield";
 import Button from "../components/button";
 
 export default function Login() {
-  const [model, setModel] = useState<any>({});
+  const [model, setModel] = useState<any>({
+      email: "",
+      password: "",
+  });
 
   const fillModel = (key: string, val: any) => {
     model[key] = val;
@@ -31,14 +34,14 @@ export default function Login() {
           </div>
 
           <div className="py-5">
-            <Input
+            <InputField
               value={model.email}
               onChange={(e: any) => fillModel("email", e.target.value)}
               label="Email"
             />
           </div>
           <div className="py-5">
-            <Input
+            <InputField
               value={model.password}
               onChange={(e: any) => fillModel("password", e.target.value)}
               label="Password"

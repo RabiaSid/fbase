@@ -2,10 +2,14 @@ import { useState } from "react";
 import Button from "../components/button";
 import { fbSignUp } from "../config/firebasemethods";
 import { useNavigate } from "react-router-dom";
-import Input from "../components/inputfield";
+import InputField from "../components/inputfield";
 
 export default function Signup() {
-  const [model, setModel] = useState<any>({});
+  const [model, setModel] = useState<any>({
+    userName: "",
+    email: "",
+    password: "",
+  });
 
   const fillModel = (key: string, val: any) => {
     model[key] = val;
@@ -33,21 +37,21 @@ export default function Signup() {
             <h1 className="text-3xl font-medium">Sign Up</h1>
           </div>
           <div className="py-5">
-            <Input
+            <InputField
               value={model.userName}
               onChange={(e: any) => fillModel("userName", e.target.value)}
               label="User Name"
             />
           </div>
           <div className="py-5">
-            <Input
+            <InputField
               value={model.email}
               onChange={(e: any) => fillModel("email", e.target.value)}
               label="Email"
             />
           </div>
           <div className="py-5">
-            <Input
+            <InputField
               value={model.password}
               onChange={(e: any) => fillModel("password", e.target.value)}
               label="Password"

@@ -1,11 +1,11 @@
 type propsType = {
     label: string;
-    onChange?: any;
+    onChange?: (...args: any[]) => any;
     type?: string;
     value?: any;
   };
   
-  export default function Input(props: propsType) {
+  export default function InputField(props: propsType) {
     const { label, onChange, type, value } = props;
     return (
       <input
