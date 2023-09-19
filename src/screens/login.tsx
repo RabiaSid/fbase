@@ -1,26 +1,26 @@
 import { useState } from "react";
-// import { fbLogin } from "../config/firebasemethods";
+import { fbLogin } from "../config/firebasemethods";
 import Input from "../components/inputfield";
 import Button from "../components/button";
 
 export default function Login() {
-  // const [model, setModel] = useState<any>({});
+  const [model, setModel] = useState<any>({});
 
-  // const fillModel = (key: string, val: any) => {
-  //   model[key] = val;
-  //   setModel({ ...model });
-  // };
+  const fillModel = (key: string, val: any) => {
+    model[key] = val;
+    setModel({ ...model });
+  };
 
-  // let LoginUser = () => {
-  //   console.log(model);
-  //   fbLogin(model)
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  let LoginUser = () => {
+    console.log(model);
+    fbLogin(model)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -32,21 +32,21 @@ export default function Login() {
 
           <div className="py-5">
             <Input
-              // value={model.email}
-              // onChange={(e: any) => fillModel("email", e.target.value)}
+              value={model.email}
+              onChange={(e: any) => fillModel("email", e.target.value)}
               label="Email"
             />
           </div>
           <div className="py-5">
             <Input
-              // value={model.password}
-              // onChange={(e: any) => fillModel("password", e.target.value)}
+              value={model.password}
+              onChange={(e: any) => fillModel("password", e.target.value)}
               label="Password"
             />
           </div>
           <div className="py-5">
             <Button 
-            // onClick={LoginUser} 
+            onClick={LoginUser} 
             label="Sign Up" />
           </div>
         </div>

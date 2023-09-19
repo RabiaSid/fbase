@@ -9,8 +9,9 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyAsZixf4iTdLBr5SNh_5HgdBkjgqp4izhQ",
   authDomain: "fbase-b21fb.firebaseapp.com",
+  databaseURL: "https://fbase-b21fb-default-rtdb.firebaseio.com",
   projectId: "fbase-b21fb",
-  storageBucket: "fbase-b21fb.appspot.com", 
+  storageBucket: "fbase-b21fb.appspot.com",
   messagingSenderId: "1038339485528",
   appId: "1:1038339485528:web:9b0a1f34cd091cbac3bf2d",
   measurementId: "G-DW4YD6HNGC"

@@ -1,30 +1,29 @@
 import { useState } from "react";
-// import BAButton from "../component/BAButton";
 import Button from "../components/button";
-// import { fbSignUp } from "../config/firebasemethods";
+import { fbSignUp } from "../config/firebasemethods";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/inputfield";
 
 export default function Signup() {
-//   const [model, setModel] = useState<any>({});
+  const [model, setModel] = useState<any>({});
 
-//   const fillModel = (key: string, val: any) => {
-//     model[key] = val;
-//     setModel({ ...model });
-//   };
+  const fillModel = (key: string, val: any) => {
+    model[key] = val;
+    setModel({ ...model });
+  };
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   let signUpUser = () => {
-//     console.log(model);
-//     fbSignUp(model)
-//       .then((res) => {
-//         navigate("/login");
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
+  let signUpUser = () => {
+    console.log(model);
+    fbSignUp(model)
+      .then((res) => {
+        navigate("/sign-in");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -35,28 +34,28 @@ export default function Signup() {
           </div>
           <div className="py-5">
             <Input
-            //   value={model.userName}
-            //   onChange={(e: any) => fillModel("userName", e.target.value)}
+              value={model.userName}
+              onChange={(e: any) => fillModel("userName", e.target.value)}
               label="User Name"
             />
           </div>
           <div className="py-5">
             <Input
-            //   value={model.email}
-            //   onChange={(e: any) => fillModel("email", e.target.value)}
+              value={model.email}
+              onChange={(e: any) => fillModel("email", e.target.value)}
               label="Email"
             />
           </div>
           <div className="py-5">
             <Input
-            //   value={model.password}
-            //   onChange={(e: any) => fillModel("password", e.target.value)}
+              value={model.password}
+              onChange={(e: any) => fillModel("password", e.target.value)}
               label="Password"
             />
           </div>
           <div className="py-5">
             <Button 
-            // onClick={signUpUser} 
+            onClick={signUpUser} 
             label="Sign Up" />
           </div>
         </div>
