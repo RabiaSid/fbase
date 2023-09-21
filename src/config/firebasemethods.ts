@@ -71,7 +71,6 @@ export let fbAuth = () => {
         resolve(uid);
         // ...
       } else {
-        reject("getting error");
         // User is signed out
         // ...
       }

@@ -8,7 +8,7 @@ export default function AppRouter() {
   return (
     <Router>
         <Routes>
-            <Route path="/" element={<Protected screen={Task} />} />
+            <Route path="/" element={<Protected Screen={Task} />} />
             {/* <Route path="/" element={<Task/>} /> */}
             <Route path="/sign-in" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />

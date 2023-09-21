@@ -11,6 +11,7 @@ export default function Protected(props: any) {
     checkAuth();
   }, []);
 
+  
   let checkAuth = () => {
     setLoader(true);
     fbAuth()
@@ -22,7 +23,16 @@ export default function Protected(props: any) {
         navigate("/sign-in");
       });
   };
-
+  // let checkAuth = () => {
+  //   setLoader(true);
+  //   let auth = false
+  //   if(auth) {
+  //     setLoader(false);
+  //   }else{
+  //     setLoader(false);
+  //     navigate("/sign-in");
+  //   }
+  // };
   return loader ? (
     <>
       <h1>loading</h1>

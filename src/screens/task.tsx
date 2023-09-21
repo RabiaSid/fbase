@@ -5,7 +5,10 @@ import Button from "../components/button";
 
 export default function Task() {
   const [taskList, setTaskList] = useState<any>();
-  const [model, setModel] = useState<any>({});
+  const [model, setModel] = useState<any>({
+    task:"",
+    assignee:"",
+  });
 
   const fillModel = (key: string, val: any) => {
     model[key] = val;
@@ -40,7 +43,44 @@ export default function Task() {
 
   return (
     <>
-      <div className="grid grid-rows-3 grid-flow-col gap-4">
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-12">
+        <div>
+          <h1 className="text-4xl text-white">Task</h1>
+        </div>
+      </div>
+      <div className="grid grid-cols-4">
+        <div className="p-10">
+          <div className="py-2">
+            <InputField
+              value={model.task}
+              onChange={(e: any) => fillModel("task", e.target.value)}
+              label="Task"
+            />
+          </div>
+          <div className="py-2">
+            <InputField
+              value={model.assignee}
+              onChange={(e: any) => fillModel("assignee", e.target.value)}
+              label="assignee"
+            />
+          </div>
+          <div className="py-2">
+            <Button onClick={AddTask} label="AddTask" />
+          </div>
+        </div>
+        <div className="p-10 col-span-3">
+        {taskList && taskList.length > 0 ? taskList.map((x: any)=>(
+            <div key={x.id} className="rounded bg-white drop-shadow-xl my-2 px-5 py-2">
+              <h1 className="text-3xl">{x.task}</h1>
+              <p>{x.assignee}</p>
+            </div>
+          ))
+          :
+          null
+        }
+        </div>
+      </div>
+      {/* <div className="grid grid-rows-3 grid-flow-col gap-4">
         <div className="row-span-3 ">
           <InputField
             value={model.task}
@@ -65,7 +105,7 @@ export default function Task() {
           null
         }
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
