@@ -2,6 +2,7 @@ import { useState } from "react";
 import { fbLogin } from "../config/firebasemethods";
 import InputField from "../components/inputfield";
 import Button from "../components/button";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [model, setModel] = useState<any>({
@@ -50,7 +51,13 @@ export default function Login() {
           <div className="py-5">
             <Button 
             onClick={LoginUser} 
-            label="Sign Up" />
+            label="Sign in" />
+          </div>
+          <div className="py-5">
+            <p className="text-white">
+              not account?
+              <Link to="/sign-up"> Sign up </Link>
+            </p>
           </div>
         </div>
       </div>

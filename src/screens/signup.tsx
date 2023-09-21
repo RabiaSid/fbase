@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../components/button";
 import { fbSignUp } from "../config/firebasemethods";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputField from "../components/inputfield";
 
 export default function Signup() {
@@ -32,7 +32,7 @@ export default function Signup() {
   return (
     <>
       <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center items-center">
-        <div className="w-[500px] bg-[rgba(255,255,255,.2)] p-10 rounded-lg">
+        <div className="w-[500px] bg-[rgba(255,255,255,.2)] p-10 rounded-lg ">
           <div className="py-5">
             <h1 className="text-3xl font-medium">Sign Up</h1>
           </div>
@@ -58,9 +58,13 @@ export default function Signup() {
             />
           </div>
           <div className="py-5">
-            <Button 
-            onClick={signUpUser} 
-            label="Sign Up" />
+            <Button onClick={signUpUser} label="Sign Up" />
+          </div>
+          <div className="py-5">
+            <p className="text-white">
+              If you have allready login?
+              <Link to="/sign-in"> Log in </Link>
+            </p>
           </div>
         </div>
       </div>
