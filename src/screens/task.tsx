@@ -69,8 +69,8 @@ export default function Task() {
           </div>
         </div>
         <div className="p-10 col-span-3">
-        {taskList && taskList.length > 0 ? taskList.map((x: any)=>(
-            <div key={x.id} className="rounded bg-white drop-shadow-xl my-2 px-5 py-2">
+        {taskList && taskList.length > 0 ? taskList.map((x: any)=>( 
+           <div key={x.id} className="rounded bg-white drop-shadow-xl my-2 px-5 py-2">
               <h1 className="text-3xl">{x.task}</h1>
               <p>{x.assignee}</p>
             </div>
@@ -80,32 +80,7 @@ export default function Task() {
         }
         </div>
       </div>
-      {/* <div className="grid grid-rows-3 grid-flow-col gap-4">
-        <div className="row-span-3 ">
-          <InputField
-            value={model.task}
-            onChange={(e: any) => fillModel("task", e.target.value)}
-            label="Task"
-          />
-          <InputField
-            value={model.assignee}
-            onChange={(e: any) => fillModel("assignee", e.target.value)}
-            label="assignee"
-          />
-          <Button onClick={AddTask} label="AddTask" />
-        </div>
-        <div className="row-span-1 col-span-3">
-          {taskList && taskList.length > 0 ? taskList.map((x: any)=>(
-            <div key={x.id}>
-              <h1 className="text-3xl">{x.task}</h1>
-              <p>{x.assignee}</p>
-            </div>
-          ))
-          :
-          null
-        }
-        </div>
-      </div> */}
+      
     </>
   );
 }
